@@ -1,53 +1,50 @@
 class ArticlesController < ApplicationController
-   before_action :set_article, only: [:show, :edit, :update]
+  before_action :set_article, only: %i[show edit update]
 
+  def index
+    @articles = Article.all
+  end
 
-    def index
-       @articles = Article.all
+  def show; end
+
+  def new
+    @article = Article.new
+  end
+
+  def create
+    @article = Article.new(article_params)
+    if @article.save
+      redirect_to article_path(@article), notice: '保存できました!!'
+    else
+      flash.now[:error] = '保存に失敗しました…'
+      render :new
     end
+  end
 
-    def show
-    end
+  def edit; end
 
-    def new
-      @article = Article.new
+  def update
+    if @article.update(article_params)
+      redirect_to article_path(@article), notice: '更新できました'
+    else
+      flash.now[:error] = '更新できませんでした'
+      render :edit
     end
+  end
 
-    def create
-      @article = Article.new(article_params)
-      if  @article.save
-         redirect_to article_path(@article), notice: '保存できました!!'
-      else
-         flash.now[:error] = '保存に失敗しました…'
-         render :new
-      end
-    end
+  def destroy
+    article = Article.find(params[:id])
+    article.destroy!
+    redirect_to root_path, notice: '削除に成功しました'
+  end
 
-    def edit
-    end
-    
-    def update
-       if  @article.update(article_params)
-         redirect_to article_path(@article), notice: '更新できました'
-       else
-         flash.now[:error] ='更新できませんでした'
-         render :edit
-       end
-    end
+  private
 
-    def destroy
-      article = Article.find(params[:id])
-      article.destroy!
-      redirect_to root_path, notice: '削除に成功しました'
-    end
+  def article_params
+    params.require(:article).permit(:title, :content)
+  end
 
-    private
-    def article_params
-      params.require(:article).permit(:title, :content)
-    end
-
-    def set_article
-      @article = Article.find(params[:id])
-    end
-
+  def set_article
+    @article = Article.find(params[:id])
+  end
 end
