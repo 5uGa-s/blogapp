@@ -8,8 +8,6 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
 #
 # Indexes
 #
@@ -23,12 +21,18 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :articles, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :favorite_articles, through: :likes, source: :article
   has_one :profile, dependent: :destroy
 
   delegate :birthday, :age, :gender, to: :profile, allow_nil: true
 
   def has_written?(article)
     articles.exists?(id: article.id)
+  end
+
+  def has_likes?(article)
+    likes.exists?(article_id: article.id)
   end
 
   def display_name
