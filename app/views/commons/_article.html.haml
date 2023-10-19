@@ -12,5 +12,5 @@
       .card_detail
         = image_tag article.user.avatar_image
         %div
-          %p cohki0305
+          %p= current_user.display_name
           %p= article.display_created_at

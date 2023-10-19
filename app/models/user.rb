@@ -8,11 +8,8 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
-#
-# Indexes
-#
-#  index_users_on_email                 (email) UNIQUE
-#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
 #
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
@@ -48,7 +45,7 @@ class User < ApplicationRecord
     if profile&.avatar&.attached?
       profile.avatar
     else
-      'default-avatar.pang'
+      'default-avatar.png'
     end
   end
 
