@@ -20,4 +20,7 @@ input, select {
     min-height: 440px;
     resize: vertical;
     border: 1px solid #EBEBEB;
+    &.sm {
+      min-height: 160px;
+    }
   }
