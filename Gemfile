@@ -31,6 +31,9 @@ gem 'faker'
 gem 'hamlit'
 gem 'devise'
 gem 'net-http'
+gem 'net-smtp'
+gem 'net-pop'
+gem 'net-imap'
 
 
 

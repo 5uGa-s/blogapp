@@ -351,6 +351,9 @@ DEPENDENCIES
   letter_opener_web (~> 1.0e)
   listen (~> 3.2)
   net-http
+  net-imap
+  net-pop
+  net-smtp
   pg (>= 0.18, < 2.0)
   pry-byebug
   puma (~> 4.1)
