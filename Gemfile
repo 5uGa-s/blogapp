@@ -30,7 +30,7 @@ gem 'binding_of_caller'
 gem 'faker'
 gem 'hamlit'
 gem 'devise'
-
+gem 'net-http'
 
 
 

@@ -167,6 +167,8 @@ GEM
     mini_portile2 (2.8.5)
     minitest (5.20.0)
     msgpack (1.7.2)
+    net-http (0.3.2)
+      uri
     net-imap (0.4.2)
       date
       net-protocol
@@ -301,6 +303,7 @@ GEM
     tzinfo (1.2.11)
       thread_safe (~> 0.1)
     unicode-display_width (2.5.0)
+    uri (0.12.2)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -347,6 +350,7 @@ DEPENDENCIES
   letter_opener
   letter_opener_web (~> 1.0e)
   listen (~> 3.2)
+  net-http
   pg (>= 0.18, < 2.0)
   pry-byebug
   puma (~> 4.1)
