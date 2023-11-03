@@ -35,6 +35,7 @@ gem 'net-smtp'
 gem 'net-pop'
 gem 'net-imap'
 gem 'aws-sdk-s3', require: false
+gem 'sidekiq'
 
 
 # Use Active Storage variant
