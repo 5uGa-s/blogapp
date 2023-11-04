@@ -16,10 +16,10 @@
     "webpack-cli": "^3.3.12"
   },
   "scripts": {
-    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && nuxt",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && nuxt build",
+    "dev": "NODE_OPTIONS='--openssl-legacy-provider' nuxt",
+    "build": "NODE_OPTIONS='--openssl-legacy-provider' nuxt build",
     "start": "nuxt start",
-    "generate": "set NODE_OPTIONS=--openssl-legacy-provider && nuxt generate"
+    "generate": "NODE_OPTIONS='--openssl-legacy-provider' nuxt generate"
   },
 
   "version": "0.1.0",
