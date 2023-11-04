@@ -15,6 +15,10 @@
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
   },
+  "scripts": {
+    "develop": "NODE_OPTIONS='--openssl-legacy-provider' gatsby develop"
+  },
+
   "version": "0.1.0",
   "devDependencies": {
     "@babel/plugin-proposal-private-methods": "^7.18.6",
