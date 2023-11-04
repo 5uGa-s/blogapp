@@ -15,12 +15,10 @@
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
   },
+
   "scripts": {
-    "dev": "NODE_OPTIONS='--openssl-legacy-provider' nuxt",
-    "build": "NODE_OPTIONS='--openssl-legacy-provider' nuxt build",
-    "start": "nuxt start",
-    "generate": "NODE_OPTIONS='--openssl-legacy-provider' nuxt generate"
-  },
+    "develop": "NODE_OPTIONS='--openssl-legacy-provider' gatsby develop"
+    },
 
   "version": "0.1.0",
   "devDependencies": {
