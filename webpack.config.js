@@ -1,14 +1,32 @@
-const path = require('path');
+var path = require('path');
 
 module.exports = {
-  entry: {
-    'index': [
-      path.resolve(__dirname, 'src/index.js')
-    ]
-  },
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'public'),
-    publicPath: '/',
-  },
-};
+
+    entry: path.resolve(__dirname, 'src') + '/app/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist') + '/app',
+        filename: 'bundle.js',
+        publicPath: '/app/'
+    },
+    module: {
+      rules: [
+        { 
+          test: /\.js$/,
+          include: [
+            path.resolve(__dirname, "src")
+          ],
+          use: {
+            loader: 'babel-loader'
+          },
+          options: {
+            presets: ['react', 'es2015', 'env']
+          }
+        },
+        {
+           test: /\.css$/,
+           use: {
+             loader: 'style-loader!css-loader'
+           }     
+        }
+      ]
+    } };
