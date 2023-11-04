@@ -15,12 +15,10 @@
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
   },
-
   "scripts": {
     "dev": "cross-env NODE_SERVER=\"localhost\" NODE_OPTIONS='--openssl-legacy-provider' nuxt",
     "build": "cross-env NODE_SERVER=\"localhost\" NODE_OPTIONS='--openssl-legacy-provider' nuxt build"
   },
-
   "version": "0.1.0",
   "devDependencies": {
     "@babel/plugin-proposal-private-methods": "^7.18.6",
