@@ -13,20 +13,13 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        include: path.resolve(__dirname, 'src'),
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-react', '@babel/preset-env']
+            presets: ['@babel/preset-env']
           }
         }
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
       }
     ]
   }
