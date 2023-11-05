@@ -15,8 +15,7 @@
   },
   "scripts": {
     "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "watch": "webpack --watch --progress"
+    "build": "webpack --mode production"
   },
   "version": "0.1.0",
   "devDependencies": {
