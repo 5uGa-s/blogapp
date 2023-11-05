@@ -14,8 +14,8 @@
     "turbolinks": "^5.2.0"
   },
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production --watch --config webpack.config.js",
+    "dev": "webpack --mode development --watch --config webpack.config.js"
   },
   "version": "0.1.0",
   "devDependencies": {
