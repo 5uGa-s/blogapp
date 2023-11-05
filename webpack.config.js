@@ -1,27 +1,22 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = {
-  mode: 'development',
-  entry: {
-    main: './app.js'
-  },
+  entry: './app.js',
   output: {
-    path: path.resolve(__dirname, 'dist', 'app'),
     filename: 'bundle.js',
-    publicPath: '/app/'
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
       {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
+        loader: 'babel-loader',
       },
     ],
-  }
+  },
 };
