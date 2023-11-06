@@ -16,8 +16,8 @@
     "webpack-cli": "^3.3.12"
   },
   "scripts": {
-    "build": "webpack --mode production --watch --config webpack.config.js",
-    "dev": "webpack --mode development --watch --config webpack.config.js"
+    "build": "webpack",
+    "start": "webpack-dev-server"
   },
   "version": "0.1.0",
   "devDependencies": {
