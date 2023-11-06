@@ -1,27 +1,17 @@
 const path = require('path');
 
-module.exports = {
-  entry: './app.js',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        },
-      },
-    ],
-  },
+
+module.exports = function(api) {
+  api.cache(true);
+
+  const presets = [
+    [`@babel/preset-env`, { 'useBuiltIns': `usage`, 'corejs': `2` }],
+    [`@babel/preset-react`, { 'development': true, minify: true }],
+  ];
+
+  const plugins = [
+    `@babel/plugin-syntax-dynamic-import`,
+  ];
+
+  return { presets, plugins };
 };
