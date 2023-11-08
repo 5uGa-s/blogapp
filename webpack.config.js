@@ -13,11 +13,18 @@ module.exports = {
   optimization: {
     minimize: true,
     minimizer: [
-      new CssMinimizerPlugin(),
-      '...',
+      new CssMinimizerPlugin({
+        minimizerOptions: {
+          level: {
+            1: {
+              roundingPrecision: "all=3,px=5",
+            },
+          },
+        },
+        minify: CssMinimizerPlugin.cleanCssMinify,
+      }),
     ],
   },
-  plugins: [new MiniCssExtractPlugin()],
 };
 
 
