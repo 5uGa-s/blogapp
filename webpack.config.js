@@ -5,17 +5,22 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.s?css$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
     ],
   },
   optimization: {
+    minimize: true,
     minimizer: [
-      // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
-      // `...`,
       new CssMinimizerPlugin(),
+      '...',
     ],
   },
   plugins: [new MiniCssExtractPlugin()],
 };
+
+
+
+
+
