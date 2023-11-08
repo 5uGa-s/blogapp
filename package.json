@@ -13,8 +13,7 @@
     "rails-ujs": "^5.2.8-1",
     "trix": "^1.2.0",
     "turbolinks": "^5.2.0",
-    "webpack": "^5.0.0",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^5.1.4"
   },
   "scripts": {
     "develop": "NODE_OPTIONS='--openssl-legacy-provider' gatsby develop"
@@ -31,6 +30,7 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "css-minimizer-webpack-plugin": "^5.0.1",
+    "webpack": "^5.89.0",
     "webpack-dev-server": "^3"
   }
 }
