@@ -374,7 +374,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   letter_opener
-  letter_opener_web (~> 1.0e)
+  letter_opener_web (~> 1.0)
   listen (~> 3.2)
   net-http
   net-imap
